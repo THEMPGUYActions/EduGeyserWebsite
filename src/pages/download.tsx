@@ -59,12 +59,12 @@ const DownloadPage: React.FC = () => (
                     }}
                     additionalDownloads={{
                         fabric: {
-                            url: "https://modrinth.com/mod/floodgate",
-                            file: "floodgate-fabric.jar"
+                            url: "https://github.com/SendableMetatype/EduFloodgate-Modded/releases",
+                            file: "edufloodgate-fabric.jar"
                         },
                         neoforge: {
-                            url: "https://modrinth.com/mod/floodgate",
-                            file: "floodgate-neoforge.jar"
+                            url: "https://github.com/SendableMetatype/EduFloodgate-Modded/releases",
+                            file: "edufloodgate-neoforge.jar"
                         }
                     }}
                 />

@@ -203,10 +203,6 @@ const config: Config = {
                         {
                             label: 'EduFloodgate',
                             href: 'https://codeberg.org/SendableMetatype/EduFloodgate/releases',
-                        },
-                        {
-                            label: 'Extension',
-                            href: 'https://github.com/SendableMetatype/Geyser-Education-Extension/releases',
                         }
                     ],
                 },

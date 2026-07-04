@@ -1,0 +1,54 @@
+---
+title: Education Setup
+description: Set up EduGeyser so Minecraft Education Edition students can join your Java server.
+---
+
+EduGeyser is a Geyser fork that lets Minecraft: Education Edition players join Minecraft: Java Edition servers. Regular Bedrock Edition players can connect at the same time, so both editions play together on the same server.
+
+## Requirements
+
+**Server side:**
+
+* A Java Edition server on any platform Geyser supports (Paper, Spigot, proxies, Fabric, NeoForge, or standalone)
+* Java 17 or newer
+* EduGeyser (replaces standard Geyser)
+* EduFloodgate (replaces standard Floodgate), see [EduFloodgate](/wiki/geyser/education/edufloodgate)
+
+:::info
+The Education Extension that handles student connections is bundled inside EduGeyser and installs itself automatically. There is nothing extra to download and nothing to place in the extensions folder.
+:::
+
+**Client side:**
+
+* Minecraft Education Edition 1.21.133 or newer
+* A Microsoft 365 Education account (school provided)
+* Windows, macOS, iPad, Chromebook, or Android
+
+## Installation
+
+1. Download EduGeyser and EduFloodgate from the [download page](/download).
+2. Install them exactly like standard Geyser and Floodgate, replacing those jars if present. See the [Geyser setup guide](/wiki/geyser/setup/) and the [Floodgate setup guide](/wiki/floodgate/setup/) for platform specifics.
+3. Start the server.
+
+The simplest setup is a single Paper server with EduGeyser and EduFloodgate. No proxy is needed. If you already run a Velocity or BungeeCord network, install EduGeyser on the proxy and EduFloodgate on both the proxy and the backend servers.
+
+## First start
+
+On first start, EduGeyser generates a numeric **Connection ID** and stores it in `nethernet/connection-id.yml` inside the Geyser folder. It is printed to the console on every startup:
+
+```
+[Nethernet] Listening on connection ID: 123456789012345678
+```
+
+You can also run `/edu joincode` in the console to see it at any time.
+
+## How students join
+
+1. Open Education Edition and press **Play**
+2. Press **Join World**
+3. Press the small **...** button to the right of the confirm button
+4. Enter the Connection ID and confirm
+
+No accounts, mods, or client configuration are needed beyond being signed in to Education Edition.
+
+For join codes, the in game server list, and restricting which schools can join, see [Connection Methods](/wiki/geyser/education/connection-methods).

@@ -1,0 +1,46 @@
+---
+title: Troubleshooting and FAQ
+description: Education specific problems and questions for EduGeyser servers.
+---
+
+This page only covers behavior that EduGeyser adds. For general Geyser problems, see [Common Issues](/wiki/geyser/common-issues).
+
+## Troubleshooting
+
+### "An error occurred" immediately after connecting
+
+This usually means the server is not running EduGeyser. Verify you are using the EduGeyser jar, not standard Geyser.
+
+### Education players have usernames like `+Mark` or `+Mark_2`
+
+This is expected. Education players get a prefix (configurable in the EduFloodgate config), and a `_N` suffix appears when two education players with the same display name are online at the same time. See [EduFloodgate](/wiki/geyser/education/edufloodgate).
+
+### Regular Bedrock players can no longer connect
+
+EduGeyser supports Education and Bedrock clients at the same time. If Bedrock players cannot connect, make sure EduFloodgate is installed alongside EduGeyser and Floodgate is set up as usual per the [Floodgate setup guide](/wiki/floodgate/setup/).
+
+### Students get "Invalid Tenant ID" or are disconnected immediately
+
+The student's education sign in may have expired. Have them restart Education Edition to get a fresh session.
+
+## FAQ
+
+### Can Education and Bedrock players be on the same server?
+
+Yes. EduGeyser detects each client type automatically. Both play together.
+
+### Do students need to install anything?
+
+No. Students connect through Education Edition's own connection dialog with the Connection ID, or through join codes if configured.
+
+### Is this safe for schools?
+
+Students authenticate through their school's Microsoft 365 accounts, and their identity is cryptographically verified through Microsoft education services. The server can identify each student's school (tenant) and role (student or teacher).
+
+### Can students from different schools join the same server?
+
+Yes. The Connection ID works across all tenants, so students from any school can join with the same ID. Join codes are per school. To restrict which schools may join, use the [tenant whitelist](/wiki/geyser/education/connection-methods#tenant-whitelist-optional).
+
+### Does this cost anything?
+
+The software is free. No Microsoft licenses, admin accounts, or subscriptions are needed for basic education support.

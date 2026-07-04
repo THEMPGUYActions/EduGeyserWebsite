@@ -1,7 +1,7 @@
 import React from 'react';
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import { faTowerCell, faFileZipper, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import { faTowerCell, faFileZipper } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeroBanner from '@site/src/components/HeroBanner';
 import HeroBackground from '@site/static/img/site/split-background.webp';
@@ -67,18 +67,6 @@ const DownloadPage: React.FC = () => (
                             file: "edufloodgate-neoforge.jar"
                         }
                     }}
-                />
-            </TabItem>
-            <TabItem value="education-extension" label="Education Extension">
-                <ProjectDownload
-                    projectId="education-extension"
-                    description={<Translate id='pages.download.description.education-extension'>A required extension for EduGeyser that enables Minecraft: Education Edition clients to connect and registers your server with Education Edition. It is built specifically for EduGeyser and does not work with a standard Geyser installation.</Translate>}
-                    downloadUrl="https://github.com/SendableMetatype/Geyser-Education-Extension/releases"
-                    staticDownloads
-                    downloadsInfo={{
-                        extension: <><FontAwesomeIcon icon={faGraduationCap} /> Education Extension</>,
-                    }}
-                    gridColumns={1}
                 />
             </TabItem>
             <TabItem value="other-projects" label="Other Projects">

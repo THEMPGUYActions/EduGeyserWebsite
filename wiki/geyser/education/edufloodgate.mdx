@@ -1,0 +1,24 @@
+---
+title: EduFloodgate
+description: How EduFloodgate handles usernames and UUIDs for Education Edition players.
+---
+
+EduFloodgate replaces standard Floodgate and adds handling for Education Edition players' usernames and UUIDs. Install and configure it exactly like standard Floodgate (see the [Floodgate setup guide](/wiki/floodgate/setup/)), with one difference: on Fabric and NeoForge servers, use **EduFloodgate Modded** instead, available on the [download page](/download/?project=floodgate).
+
+## Education prefix
+
+Education players get their own username prefix so they can be told apart from regular Bedrock players:
+
+```yaml
+# In the EduFloodgate config.yml:
+education-prefix: "+"
+```
+
+The default is `+`. Regular Bedrock players keep the normal Floodgate prefix.
+
+## Username collisions
+
+Education Edition display names often collide: the default Entra format is the first name plus the last initial, which is not unique per user. When two education players with the same display name are online at the same time, EduFloodgate appends a `_N` suffix to keep them apart:
+
+* First "Mark" to join: `+Mark`
+* Second "Mark" to join: `+Mark_2`

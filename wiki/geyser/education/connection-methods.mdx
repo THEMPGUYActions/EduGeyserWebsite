@@ -1,0 +1,128 @@
+---
+title: Connection Methods
+description: The ways Education Edition students can connect to an EduGeyser server.
+---
+
+There are three ways students can connect to your server. The Connection ID works out of the box; join codes and the server list are optional and need a Microsoft account sign in.
+
+## Connection ID
+
+The default method. Students enter a numeric ID in Education Edition's connection dialog (see [How students join](/wiki/geyser/education/setup#how-students-join)). The ID works for students from every school, is generated automatically on first start, and stays the same across restarts.
+
+It is stored in `nethernet/connection-id.yml` inside the Geyser folder:
+
+```yaml
+# Nethernet connection ID. Clients enter this to connect via WebRTC.
+# Auto-generated. Delete this file to regenerate.
+# Must be 10-18 decimal digits.
+connection-id: "123456789012345678"
+```
+
+To change it, edit the value (10 to 18 digits) and restart the server, or delete the file to generate a fresh one.
+
+:::caution
+Keep the ID random. Predictable numbers invite collisions with other servers worldwide.
+:::
+
+## Join Codes (optional)
+
+Join codes let students connect by entering symbols on Education Edition's join code screen, or with one click through a share link. Each code is tied to one school: it only works for students in the same Microsoft tenant as the account that created it.
+
+### Quick start
+
+1. Run `/edu joincode add` from the console
+2. Sign in with any Microsoft 365 Education account when prompted
+3. The join code and share link are printed to the console
+4. Share them with students
+
+While at least one join code is active, the connection ID and all codes are printed to the console every few minutes as a reminder.
+
+### Multiple schools
+
+Run `/edu joincode add` once per tenant. Each run needs a sign in with an account from that tenant. All tenants share the same connection ID; only the join codes are per tenant.
+
+### Configuration
+
+Edit `extensions/edu/joincode_config.yml` inside the Geyser folder:
+
+```yaml
+world-name: "Education Server"
+host-name: "EduGeyser"
+max-players: 40
+```
+
+### Commands
+
+| Command | Description |
+|---------|-------------|
+| `/edu joincode` | Show the connection ID, active join codes, and share links |
+| `/edu joincode add` | Create a join code for a new tenant |
+| `/edu joincode remove <number>` | Remove a join code by its index |
+
+### Notes
+
+* Join codes and share links change on every server restart
+* Codes stay alive through a heartbeat while the server is running
+* No Global Admin access is needed, any education account works
+
+## Server List (optional)
+
+Broadcasts your server to Education Edition's own server browser. This requires Global Admin access to each Microsoft 365 Education tenant.
+
+1. Edit `extensions/edu/serverlist_config.yml`:
+
+```yaml
+server-name: "My School Server"
+server-ip: "mc.example.com"
+server-port: "19132"
+max-players: 40
+```
+
+:::caution
+Always set `server-ip` and `server-port` explicitly. Automatic detection is best effort and picks wrong values behind NAT, tunnels, and reverse proxies, or when the external port differs from the port Geyser binds.
+:::
+
+2. Restart the server
+3. Run `/edu serverlist add` from the console
+4. Two device code prompts appear. Sign in with a Global Admin Microsoft 365 Education account
+5. The server now appears in Education Edition's server list for that tenant
+
+To broadcast to several schools, run `/edu serverlist add` once per tenant, each with its own Global Admin account.
+
+### Commands
+
+| Command | Description |
+|---------|-------------|
+| `/edu serverlist` | Show all registered accounts with status |
+| `/edu serverlist add` | Start the device code flow for a new tenant |
+| `/edu serverlist remove <number>` | Remove an account by its index |
+
+## Tenant Whitelist (optional)
+
+Restricts which organizations (Microsoft Entra tenants) are allowed to join. Edit `extensions/edu/tenant_whitelist.yml`:
+
+```yaml
+enabled: true
+tenants:
+  - "03b5e7a1-cb09-4417-9e1a-c686b440b2c5"
+```
+
+* `enabled` is the master switch. Set it to `false` to turn the whitelist off without deleting your list.
+* While enabled, an empty list allows everyone and a filled list allows only the listed tenants.
+
+You can find a tenant ID with [Microsoft's guide](https://learn.microsoft.com/en-us/sharepoint/find-your-office-365-tenant-id) or [tenantidlookup.com](https://tenantidlookup.com/).
+
+:::caution
+This is an advanced feature. A wrong tenant list stops legitimate students from joining. Leave the list empty unless you specifically need it.
+:::
+
+## Files
+
+| File | Purpose |
+|------|---------|
+| `nethernet/connection-id.yml` | The connection ID, owned by EduGeyser |
+| `extensions/edu/joincode_config.yml` | World name, host name, and max players for join codes |
+| `extensions/edu/sessions_joincode.yml` | Join code sign in tokens, managed automatically |
+| `extensions/edu/serverlist_config.yml` | Server list name, IP, port, and max players |
+| `extensions/edu/sessions_serverlist.yml` | Server list sign in tokens, managed automatically |
+| `extensions/edu/tenant_whitelist.yml` | Allowed tenants |

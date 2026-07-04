@@ -41,6 +41,19 @@ const sidebars: SidebarsConfig = {
         'geyser/index',
         {
             type: 'category',
+            label: 'Education',
+            link: {
+                type: 'doc',
+                id: 'geyser/education/setup'
+            },
+            items: [
+                'geyser/education/connection-methods',
+                'geyser/education/edufloodgate',
+                'geyser/education/troubleshooting'
+            ]
+        },
+        {
+            type: 'category',
             label: 'Setup',
             link: {
                 type: 'doc',

@@ -266,9 +266,6 @@
   "pages.download.description.floodgate": {
     "message": "Hybrid mode plugin that lets EduGeyser players join online mode servers without a Java Edition account."
   },
-  "pages.download.description.education-extension": {
-    "message": "A required extension for EduGeyser that enables Minecraft: Education Edition clients to connect and registers your server with Education Edition. It is built specifically for EduGeyser and does not work with a standard Geyser installation."
-  },
   "pages.download.description.geyserconnect": {
     "message": "A plugin to allow for Geyser players to connect to your server without needing to use a proxy."
   },

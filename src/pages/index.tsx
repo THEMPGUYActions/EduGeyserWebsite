@@ -46,7 +46,7 @@ export default function Home(): JSX.Element {
                     >
                         <Translate id="components.homepage_features.1.line1">EduGeyser is a Geyser fork that allows Minecraft Education Edition clients to join Minecraft Java Edition servers. Both Education and regular Bedrock players can connect simultaneously.</Translate>
                         <br /><br />
-                        <Translate id="components.homepage_features.1.line2">Students authenticate through their school's Microsoft 365 accounts. Player identity is cryptographically verified via Microsoft Education Services.</Translate>
+                        <Translate id="components.homepage_features.1.line2">Players authenticate through their Microsoft 365 Education accounts. Player identity is cryptographically verified via Microsoft Education Services.</Translate>
                     </HomepageFeature>
 
                     <HomepageFeature

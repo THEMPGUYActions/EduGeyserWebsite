@@ -243,7 +243,7 @@
     "message": "EduGeyser is a Geyser fork that allows Minecraft: Education Edition clients to join Minecraft: Java Edition servers. Regular Bedrock Edition players can connect at the same time, for true crossplay across editions."
   },
   "components.homepage_features.1.line2": {
-    "message": "The goal of this project is to let students and educators on Minecraft: Education Edition join standard Java Edition servers as seamlessly as possible."
+    "message": "The goal of this project is to let Minecraft: Education Edition players join standard Java Edition servers as seamlessly as possible."
   },
   "components.homepage_features.2": {
     "message": "EduGeyser acts as a translator which sits between the Education Edition client and the Java server. It takes data from the client and translates it into a format the Java server understands and vice versa. EduGeyser works with any modern Minecraft version and can be installed either as a plugin or run as a standalone program."
@@ -252,7 +252,7 @@
     "message": "EduGeyser can be joined from Minecraft: Education Edition on Windows, iPad, Chromebook, and Mac. It works with a wide array of hosting providers, but can also be used as its own standalone proxy to join any Minecraft server!"
   },
   "components.homepage_features.3.line2": {
-    "message": "Students authenticate through their school's Microsoft 365 accounts, and their identity is cryptographically verified through Microsoft Education services. Install our EduFloodgate plugin so Education Edition users can join without a Java Edition account!"
+    "message": "Players authenticate through their Microsoft 365 Education accounts, and their identity is cryptographically verified through Microsoft Education services. Install our EduFloodgate plugin so Education Edition players can join without a Java Edition account!"
   },
   "pages.download.title": {
     "message": "Download"

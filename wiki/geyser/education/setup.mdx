@@ -1,6 +1,6 @@
 ---
 title: Education Setup
-description: Set up EduGeyser so Minecraft Education Edition students can join your Java server.
+description: Set up EduGeyser so Minecraft Education Edition players can join your Java server.
 ---
 
 EduGeyser is a Geyser fork that lets Minecraft: Education Edition players join Minecraft: Java Edition servers. Regular Bedrock Edition players can connect at the same time, so both editions play together on the same server.
@@ -15,13 +15,13 @@ EduGeyser is a Geyser fork that lets Minecraft: Education Edition players join M
 * EduFloodgate (replaces standard Floodgate), see [EduFloodgate](/wiki/geyser/education/edufloodgate)
 
 :::info
-The Education Extension that handles student connections is bundled inside EduGeyser and installs itself automatically. There is nothing extra to download and nothing to place in the extensions folder.
+The Education Extension that handles player connections is bundled inside EduGeyser and installs itself automatically. There is nothing extra to download and nothing to place in the extensions folder.
 :::
 
 **Client side:**
 
 * Minecraft Education Edition 1.21.133 or newer
-* A Microsoft 365 Education account (school provided)
+* A Microsoft 365 Education account (provided by your school or organization)
 * Windows, macOS, iPad, Chromebook, or Android
 
 ## Installation
@@ -34,15 +34,15 @@ The simplest setup is a single Paper server with EduGeyser and EduFloodgate. No 
 
 ## First start
 
-On first start, EduGeyser generates a numeric **Connection ID** and stores it in `nethernet/connection-id.yml` inside the Geyser folder. It is printed to the console on every startup:
+On first start, EduGeyser generates a **Connection ID** and stores it in `nethernet/connection-id.yml` inside the Geyser folder. It is printed to the console on every startup:
 
 ```
-[Nethernet] Listening on connection ID: 123456789012345678
+[Nethernet] Listening on connection ID: 1234567890123456785daffd38c5bbac52ba313d53d9354b58
 ```
 
 You can also run `/edu joincode` in the console to see it at any time.
 
-## How students join
+## How players join
 
 1. Open Education Edition and press **Play**
 2. Press **Join World**

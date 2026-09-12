@@ -32,7 +32,7 @@ const DownloadPage: React.FC = () => (
                     projectId="geyser"
                     description={<Translate id='pages.download.description.geyser'>A bridge/proxy allowing you to connect to Minecraft: Java Edition servers with Minecraft: Bedrock Edition.</Translate>}
                     setup="/wiki/geyser/setup"
-                    downloadUrl="https://codeberg.org/SendableMetatype/EduGeyser/releases"
+                    downloadUrl="https://github.com/EduGeyser/EduGeyser/releases"
                     downloadsInfo={{
                         bungeecord: <PlatformIcon svg={WaterfallBungeeCordIcon} text="BungeeCord" />,
                         fabric: <PlatformIcon img={FabricIcon} text="Fabric" />,
@@ -49,7 +49,7 @@ const DownloadPage: React.FC = () => (
                     projectId="floodgate"
                     description={<Translate id='pages.download.description.floodgate'>Hybrid mode plugin to allow for connections from Geyser to join online mode servers.</Translate>}
                     setup="/wiki/floodgate/setup"
-                    downloadUrl="https://codeberg.org/SendableMetatype/EduFloodgate/releases"
+                    downloadUrl="https://github.com/EduGeyser/EduFloodgate/releases"
                     downloadsInfo={{
                         bungee: <PlatformIcon svg={WaterfallBungeeCordIcon} text="BungeeCord" />,
                         spigot: <PlatformIcon img={PaperSpigotIcon} text="Spigot/Paper" />,

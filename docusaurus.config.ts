@@ -11,7 +11,7 @@ const config: Config = {
     url: 'https://edugeyser.org',
     baseUrl: '/',
 
-    organizationName: 'SendableMetatype',
+    organizationName: 'EduGeyser',
     projectName: 'EduGeyserWebsite',
 
     onBrokenLinks: 'throw',
@@ -148,7 +148,7 @@ const config: Config = {
                     className: 'header-download-link'
                 },
                 { // Name on mobile sidebar specified in custom.scss
-                    href: 'https://github.com/SendableMetatype',
+                    href: 'https://github.com/EduGeyser',
                     position: 'right',
                     className: 'header-github-link'
                 },
@@ -198,11 +198,11 @@ const config: Config = {
                     items: [
                         {
                             label: 'EduGeyser',
-                            href: 'https://codeberg.org/SendableMetatype/EduGeyser/releases',
+                            href: 'https://github.com/EduGeyser/EduGeyser/releases',
                         },
                         {
                             label: 'EduFloodgate',
-                            href: 'https://codeberg.org/SendableMetatype/EduFloodgate/releases',
+                            href: 'https://github.com/EduGeyser/EduFloodgate/releases',
                         }
                     ],
                 },
@@ -219,7 +219,7 @@ const config: Config = {
                         },
                         {
                             label: 'GitHub',
-                            href: 'https://github.com/SendableMetatype',
+                            href: 'https://github.com/EduGeyser',
                         },
                         {
                             label: 'Reddit',

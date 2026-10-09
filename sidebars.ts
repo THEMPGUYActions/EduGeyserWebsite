@@ -11,7 +11,6 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
  Create as many sidebars as you want.
  */
 const sidebars: SidebarsConfig = {
-    // By default, Docusaurus generates a sidebar from the docs folder structure
     apiSidebar: [
         "api/index",
         {
@@ -80,7 +79,7 @@ const sidebars: SidebarsConfig = {
         },
         {
             type: 'category',
-            label: 'Configuring Geyser',
+            label: 'Configuring EduGeyser',
             items: [
                 'geyser/commands',
                 'geyser/translations',

@@ -1,6 +1,8 @@
-# Website
+# EduGeyser Website
 
-This is the Geyser website is built using [Docusaurus 3](https://docusaurus.io/).
+This is the EduGeyser documentation website built using [Docusaurus 3](https://docusaurus.io/).
+
+This repository is a fork of the original Geyser website adapted for **EduGeyser**. Documentation, examples, links, and development references should target the EduGeyser project instead of upstream GeyserMC.
 
 ## Contributing
 
@@ -10,33 +12,20 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
 
 - [`blog/`](/blog/): Blog markdown files
 - [`wiki/`](/wiki/): Wiki markdown files
-    - [`api/`](/wiki/api/): Rest API documentation
+    - [`api/`](/wiki/api/): REST API documentation
     - [`floodgate/`](/wiki/floodgate/): Floodgate documentation
-    - [`geyser/`](/wiki/geyser): Geyser documentation
+    - [`geyser/`](/wiki/geyser): EduGeyser documentation
     - [`other/`](/wiki/other/): Other projects documentation
 - [`i18n/`](/i18n/): Translations for the website
-- [`openapi/`](/openapi/): OpenAPI spec files to auto-generate REST API documentation
+- [`openapi/`](/openapi/): OpenAPI specification files
 - [`src/`](/src/): Source of the website
-    - [`components/`](/src/components/): React components
-    - [`css/`](/src/css/): Styles
-    - [`data/`](/src/data/): Data files, such as hosting providers and supported Minecraft versions
-    - [`pages/`](/src/pages/): Pages of the website
-    - [`renderer/`](/src/renderer/): Renderer for thumbnails
-    - [`theme/`](/src/theme/): Overrides base Docusaurus theme, such as importing fa icons
-    - [`types/`](/src/types/): TypeScript types
 - [`static/`](/static/): Static content
-    - [`img/`](/static/img/): Images
-- [`docusaurus.config.ts`](/docusaurus.config.ts): Docusaurus configuration file
-- [`package.json`](/package.json): Node.js project file
-- [`sidebar.ts`](/sidebar.ts): Site sidebar configuration
-- [`tsconfig.json`](/tsconfig.json): TypeScript configuration file
-- [`yarn.lock`](/yarn.lock): Yarn lock file for Node.js dependencies
 
 ## Quick Start
 
 ```sh
-git clone https://github.com/GeyserMC/GeyserWebsite
-cd GeyserWebsite
+git clone https://github.com/EduGeyser/EduGeyserWebsite
+cd EduGeyserWebsite
 yarn
 yarn start
 ```

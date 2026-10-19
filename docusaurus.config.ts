@@ -29,7 +29,7 @@ const config: Config = {
                 docs: {
                     sidebarPath: require.resolve("./sidebars.ts"),
                     editUrl:
-                        'https://github.com/GeyserMC/GeyserWebsite/tree/master/',
+                        'https://github.com/EduGeyser/EduGeyserWebsite/tree/master/',
 
                     routeBasePath: '/wiki',
                     docItemComponent: "@theme/ApiItem",
@@ -210,24 +210,20 @@ const config: Config = {
                     title: 'Community',
                     items: [
                         {
-                            label: 'Crowdin',
-                            href: 'https://translate.geysermc.org/',
-                        },
-                        {
                             label: 'Discord',
-                            href: 'https://discord.gg/WUHDqBxwdD',
+                            href: 'https://edugeyser.org/discord',
                         },
                         {
-                            label: 'GitHub',
-                            href: 'https://github.com/EduGeyser',
+                            label: 'GitHub source',
+                            href: 'https://github.com/EduGeyser/EduGeyser',
                         },
                         {
-                            label: 'Reddit',
-                            href: 'https://www.reddit.com/r/GeyserMC/',
+                            label: 'Codeberg mirror',
+                            href: 'https://codeberg.org/SendableMetatype/EduGeyser',
                         },
                         {
-                            label: 'Twitter',
-                            href: 'https://twitter.com/Geyser_MC',
+                            label: 'EduFloodgate',
+                            href: 'https://github.com/EduGeyser/EduFloodgate',
                         },
                     ],
                 },
@@ -239,12 +235,12 @@ const config: Config = {
                             to: 'blog',
                         },
                         {
-                            label: 'Donate',
-                            href: 'https://opencollective.com/geysermc',
+                            label: 'Website source',
+                            href: 'https://github.com/EduGeyser/EduGeyserWebsite',
                         },
                         {
-                            label: 'Global Linking',
-                            href: 'https://link.geysermc.org/',
+                            label: 'EduGeyser releases',
+                            href: 'https://github.com/EduGeyser/EduGeyser/releases',
                         },
                     ],
                 },

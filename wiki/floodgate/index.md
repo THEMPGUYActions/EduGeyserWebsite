@@ -1,15 +1,14 @@
 ---
-title: Overview
+title: EduFloodgate overview
 permalink: /floodgate/
-description: 'Floodgate is a hybrid mode plugin that allows Minecraft: Bedrock Accounts to join Minecraft: Java Edition servers without needing a Minecraft: Java Edition account.'
+description: 'EduFloodgate provides Education-compatible authentication support for EduGeyser.'
 ---
 
-# Overview
-Floodgate is a hybrid mode server-plugin. It introduces new features:
-- Ability for clients to join Minecraft: Java Edition servers with Minecraft: Bedrock accounts without needing a paid Minecraft: Java Edition account. 
-- Ability to [see Bedrock player skins on Java edition](/wiki/floodgate/features#what-is-skin-uploading).
-- Ability for plugins to [send Bedrock forms](/wiki/geyser/forms/).
-- Ability to query players through the [Global Api](/wiki/api/api.geysermc.org/global-api/), 
-- Allowing Bedrock players to link to a Java account using [Global Linking](/wiki/floodgate/linking#what-is-global-linking), or Local Linking.
+# EduFloodgate overview
 
-This is something you install in addition to Geyser. Unlike Geyser, Floodgate can only be installed as a plugin on Spigot (including Paper and forks), Bungeecord, Velocity, and as a mod on Fabric servers, and can only be utilized on servers that have it installed.
+EduFloodgate is the authentication companion for EduGeyser. Check the [EduFloodgate source repository](https://github.com/EduGeyser/EduFloodgate) and [latest releases](https://github.com/EduGeyser/EduFloodgate/releases) for project-specific setup and compatibility details.
+
+It builds on Floodgate's hybrid-authentication approach, with changes intended for EduGeyser's Education Edition connection flow. It is not a replacement for EduGeyser itself.
+- Install it only alongside a compatible EduGeyser deployment, following the current EduFloodgate setup instructions.
+- Check compatibility before using Floodgate extensions or account-linking features from the original Geyser ecosystem.
+- Keep EduFloodgate updated from the [EduGeyser organization](https://github.com/EduGeyser/EduFloodgate/releases).

@@ -54,16 +54,16 @@ export default function Home(): JSX.Element {
                         image={Crossplatform1Img}
                         flipped
                     >
-                        <Translate id="components.homepage_features.2">Geyser acts as a translator which sits between the Bedrock client and the Java server. It takes data from the Bedrock client and translates it into a format the Java server understands and vice versa. Geyser works with any modern Minecraft version and can be installed either as a plugin or ran as a standalone program.</Translate>
+                        <Translate id="components.homepage_features.2">EduGeyser acts as a translator between the Minecraft Education or Bedrock client and the Java server. It takes data from the Bedrock client and translates it into a format the Java server understands and vice versa. EduGeyser supports compatible Minecraft versions and can be installed as a server plugin or run as a standalone program.</Translate>
                     </HomepageFeature>
 
                     <HomepageFeature
                         title="Join from anywhere"
                         image={Crossplatform0Img}
                     >
-                        <Translate id="components.homepage_features.3.line1">Geyser can be joined from Bedrock clients on Windows 10/11, iOS, Android, and even consoles. Geyser works with a wide array of hosting providers, but can also be used as its own standalone proxy to join any Minecraft server!</Translate>
+                        <Translate id="components.homepage_features.3.line1">EduGeyser supports Minecraft Education Edition clients, alongside compatible Bedrock clients. EduGeyser supports compatible hosting setups and can also run as a standalone proxy.</Translate>
                         <br /><br />
-                        <Translate id="components.homepage_features.3.line2">If you are a server owner, you can install our Floodgate plugin which allows Xbox Live authenticated Bedrock users to join without a Java Edition account!</Translate>
+                        <Translate id="components.homepage_features.3.line2">For Education Edition authentication, use the compatible EduFloodgate project where your setup requires it.</Translate>
                     </HomepageFeature>
                 </div>
             </main>

@@ -59,7 +59,7 @@ export const ProjectDownload: React.FC<ProjectDownloadProps> = ({ projectId, des
         let cancelled = false;
         const fetchEduGeyserData = async () => {
             const githubRepo = projectId === 'floodgate' ? 'EduGeyser/EduFloodgate' : 'EduGeyser/EduGeyser';
-            const codebergRepo = 'SendableMetatype/EduGeyser';
+            const codebergRepo = projectId === 'floodgate' ? 'SendableMetatype/EduFloodgate' : 'SendableMetatype/EduGeyser';
             const githubReleasesUrl = 'https://github.com/' + githubRepo + '/releases';
             let release: any = null;
             let commits: any[] = [];
@@ -75,11 +75,7 @@ export const ProjectDownload: React.FC<ProjectDownloadProps> = ({ projectId, des
                     url: asset.browser_download_url || asset.url
                 })));
             } catch {
-                if (projectId !== 'geyser') {
-                    setReleaseUrl(githubReleasesUrl);
-                    setReleaseName('View releases on GitHub');
-                    setReleaseAssets([]);
-                } else try {
+                try {
                     const response = await fetch('https://codeberg.org/api/v1/repos/' + codebergRepo + '/releases/latest');
                     if (!response.ok) throw new Error('Codeberg releases unavailable');
                     release = await response.json();
@@ -107,7 +103,6 @@ export const ProjectDownload: React.FC<ProjectDownloadProps> = ({ projectId, des
                 }));
             } catch {
                 try {
-                    if (projectId !== 'geyser') throw new Error('No Codeberg mirror for this project');
                     const response = await fetch('https://codeberg.org/api/v1/repos/' + codebergRepo + '/commits?limit=12');
                     if (!response.ok) throw new Error('Codeberg commit history unavailable');
                     const data = await response.json();
@@ -234,7 +229,7 @@ export const ProjectDownload: React.FC<ProjectDownloadProps> = ({ projectId, des
                                             <b><a className='download-link' href={commit.url}>{commit.sha.substring(0, 7)}</a></b> · {commit.message}
                                         </li>
                                     ))
-                                    : <li><a href={'https://github.com/' + (projectId === 'floodgate' ? 'EduGeyser/EduFloodgate' : 'EduGeyser/EduGeyser') + '/commits/master'}>View {projectId === 'floodgate' ? 'EduFloodgate' : 'EduGeyser'} commit history</a>{projectId === 'geyser' && <> · <a href='https://codeberg.org/SendableMetatype/EduGeyser/commits/branch/master'>Codeberg fallback</a></>}</li>)
+                                    : <li><a href={'https://github.com/' + (projectId === 'floodgate' ? 'EduGeyser/EduFloodgate' : 'EduGeyser/EduGeyser') + '/commits/master'}>View {projectId === 'floodgate' ? 'EduFloodgate' : 'EduGeyser'} commit history</a><> · <a href={'https://codeberg.org/' + (projectId === 'floodgate' ? 'SendableMetatype/EduFloodgate' : 'SendableMetatype/EduGeyser') + '/commits/branch/master'}>Codeberg fallback</a></></li>)
                                 : changes.map((change, i) => (
                                     <li key={i}><b><a className='download-link' href={`https://github.com/GeyserMC/${platformInfo.project_name}/commit/${change.commit}`}>{change.commit.substring(0, 7)}</a></b> · <LinkedCommitMessage message={change.summary} repo={platformInfo.project_name}/></li>
                                 ))}

@@ -5,7 +5,6 @@ import Crossplatform1Img from '@site/static/img/site/crossplatform_1.png';
 import Crossplatform2Img from '@site/static/img/site/crossplatform_2.png';
 import Heading from '@theme/Heading';
 import HeroImage from '@site/static/img/site/geyser.png';
-
 import styles from './index.module.scss';
 import Translate from '@docusaurus/Translate';
 import { HomepageFeature } from '../components/HomepageFeature';
@@ -14,14 +13,14 @@ function HomepageHeader() {
     return (
         <header className={clsx('hero hero--primary', styles.heroBanner)}>
             <div className={styles.heroContent}>
-                <img src={HeroImage} alt="EduGeyser Logo" className={styles.heroImage} />
-                <img src={HeroImage} alt="EduGeyser Logo" className={styles.heroImageBackgroundBlur} />
+                <img src={HeroImage} alt="EduGeyser logo" className={styles.heroImage} />
+                <img src={HeroImage} alt="" className={styles.heroImageBackgroundBlur} />
                 <div className={styles.textSection}>
                     <Heading as="h1" className="hero__title">
-                        <Translate id='pages.main.title'>Connect Education Edition to Java Servers</Translate>
+                        <Translate id="pages.main.title">Connect Education Edition to Java Servers</Translate>
                     </Heading>
                     <p className="hero__subtitle">
-                        <Translate id='pages.main.subtitle'>Enable Minecraft Education Edition clients to join your Minecraft Java server</Translate>
+                        <Translate id="pages.main.subtitle">Let Minecraft Education Edition players join your Java server with EduGeyser.</Translate>
                     </p>
                 </div>
             </div>
@@ -33,20 +32,19 @@ export default function Home(): JSX.Element {
     return (
         <Layout
             title="EduGeyser"
-            description="Enable Minecraft Education Edition clients to join your Minecraft Java server."
+            description="EduGeyser lets Minecraft Education Edition players join Minecraft Java Edition servers."
         >
             <HomepageHeader />
-
             <main>
-                <div className={clsx(styles.features, "container")}>
+                <div className={clsx(styles.features, 'container')}>
                     <HomepageFeature
                         title="What is EduGeyser?"
                         image={Crossplatform2Img}
                         wide
                     >
-                        <Translate id="components.homepage_features.1.line1">EduGeyser is a Geyser fork that allows Minecraft Education Edition clients to join Minecraft Java Edition servers. Both Education and regular Bedrock players can connect simultaneously.</Translate>
+                        EduGeyser is a Geyser fork that lets Minecraft Education Edition players join Minecraft Java Edition servers. Regular Bedrock players can connect at the same time.
                         <br /><br />
-                        <Translate id="components.homepage_features.1.line2">Players authenticate through their Microsoft 365 Education accounts. Player identity is cryptographically verified via Microsoft Education Services.</Translate>
+                        Education players authenticate through their Microsoft 365 Education accounts. Their identities are verified through Microsoft Education Services.
                     </HomepageFeature>
 
                     <HomepageFeature
@@ -54,16 +52,16 @@ export default function Home(): JSX.Element {
                         image={Crossplatform1Img}
                         flipped
                     >
-                        <Translate id="components.homepage_features.2">Geyser acts as a translator which sits between the Bedrock client and the Java server. It takes data from the Bedrock client and translates it into a format the Java server understands and vice versa. Geyser works with any modern Minecraft version and can be installed either as a plugin or ran as a standalone program.</Translate>
+                        EduGeyser translates supported Bedrock and Education Edition traffic for a Java Edition server. It can run as a standalone proxy or as a plugin/mod, depending on the platform.
                     </HomepageFeature>
 
                     <HomepageFeature
-                        title="Join from anywhere"
+                        title="Education Edition connection methods"
                         image={Crossplatform0Img}
                     >
-                        <Translate id="components.homepage_features.3.line1">Geyser can be joined from Bedrock clients on Windows 10/11, iOS, Android, and even consoles. Geyser works with a wide array of hosting providers, but can also be used as its own standalone proxy to join any Minecraft server!</Translate>
+                        Connect with the EduGeyser connection ID, join codes, or the Education Edition server list. Regular Bedrock players can still connect alongside Education players.
                         <br /><br />
-                        <Translate id="components.homepage_features.3.line2">If you are a server owner, you can install our Floodgate plugin which allows Xbox Live authenticated Bedrock users to join without a Java Edition account!</Translate>
+                        Visit the <a href="/wiki/geyser/education/connection-methods">connection methods guide</a> for setup details.
                     </HomepageFeature>
                 </div>
             </main>

@@ -11,7 +11,7 @@ const config: Config = {
     url: 'https://edugeyser.org',
     baseUrl: '/',
 
-    organizationName: 'EduGeyser',
+    organizationName: 'THEMPGUYActions',
     projectName: 'EduGeyserWebsite',
 
     onBrokenLinks: 'throw',
@@ -27,13 +27,13 @@ const config: Config = {
             'classic',
             {
                 docs: {
-                    sidebarPath: require.resolve("./sidebars.ts"),
-                    editUrl:
-                        'https://github.com/GeyserMC/GeyserWebsite/tree/master/',
-
+                    sidebarPath: require.resolve('./sidebars.ts'),
+                    // Wiki pages live in this website repository. The project source is linked separately.
+                    editUrl: 'https://github.com/THEMPGUYActions/EduGeyserWebsite/tree/master/',
                     routeBasePath: '/wiki',
-                    docItemComponent: "@theme/ApiItem",
                     path: 'wiki',
+                    // These pages describe GeyserMC-hosted APIs and unrelated projects, not EduGeyser services.
+                    exclude: ['api/**', 'other/**'],
                 },
                 blog: {},
                 theme: {
@@ -43,30 +43,11 @@ const config: Config = {
         ],
     ],
 
+    markdown: {
+        remarkPlugins: [require.resolve('./src/plugins/edugeyser-link-rewrite')],
+    },
+
     plugins: [
-        [
-            'docusaurus-plugin-openapi-docs',
-            {
-                id: "api",
-                docsPluginId: "classic",
-                config: {
-                    'downloads.geysermc.org': {
-                        specPath: "openapi/downloads.json",
-                        outputDir: "wiki/api/downloads.geysermc.org",
-                        sidebarOptions: {
-                            groupPathsBy: "tag",
-                        },
-                    },
-                    'api.geysermc.org': {
-                        specPath: "openapi/global.json",
-                        outputDir: "wiki/api/api.geysermc.org",
-                        sidebarOptions: {
-                            groupPathsBy: "tag",
-                        },
-                    }
-                }
-            },
-        ],
         [
             '@kas-tle/docusaurus-og',
             {
@@ -80,9 +61,8 @@ const config: Config = {
         ],
         'docusaurus-plugin-sass',
         './src/plugins/create-versions-json.ts',
-        './src/plugins/create-providers-json.ts'
+        './src/plugins/create-providers-json.ts',
     ],
-    themes: ["docusaurus-theme-openapi-docs"],
 
     themeConfig: {
         image: 'img/site/geyser.png',
@@ -110,57 +90,37 @@ const config: Config = {
                             docId: 'floodgate/index',
                             label: 'EduFloodgate',
                         },
-                        {
-                            type: 'doc',
-                            docId: 'api/index',
-                            label: 'REST APIs',
-                        },
-                        {
-                            type: 'doc',
-                            docId: 'other/index',
-                            label: 'Other',
-                        },
-                    ]
+                    ],
                 },
                 {
                     to: 'blog',
                     label: 'Blog',
                     position: 'left',
-                    className: 'header-blog-link'
-                },
-                {
-                    type: 'dropdown',
-                    label: 'Utilities',
-                    className: 'header-utilities-link',
-                    position: 'left',
-                    items: [
-                        {
-
-                            to: 'utilities/dump-viewer',
-                            label: 'Dump Viewer',
-                        }
-                    ]
+                    className: 'header-blog-link',
                 },
                 {
                     to: 'download',
                     label: 'Download',
                     position: 'left',
-                    className: 'header-download-link'
+                    className: 'header-download-link',
                 },
-                { // Name on mobile sidebar specified in custom.scss
-                    href: 'https://github.com/EduGeyser',
+                {
+                    href: 'https://github.com/EduGeyser/EduGeyser',
+                    label: 'GitHub',
                     position: 'right',
-                    className: 'header-github-link'
+                    className: 'header-github-link',
                 },
-                { // Name on mobile sidebar specified in custom.scss
-                    href: 'https://discord.gg/WUHDqBxwdD',
+                {
+                    href: 'https://codeberg.org/SendableMetatype/EduGeyser',
+                    label: 'Codeberg mirror',
                     position: 'right',
-                    className: 'header-discord-link'
                 },
-                // {
-                //     type: 'localeDropdown',
-                //     position: 'right',
-                // },
+                {
+                    href: 'https://edugeyser.org/discord',
+                    label: 'Discord',
+                    position: 'right',
+                    className: 'header-discord-link',
+                },
             ],
         },
         footer: {
@@ -175,87 +135,42 @@ const config: Config = {
                 {
                     title: 'Wiki',
                     items: [
-                        {
-                            label: 'EduGeyser',
-                            to: 'wiki/geyser/setup',
-                        },
-                        {
-                            label: 'EduFloodgate',
-                            to: 'wiki/floodgate/setup',
-                        },
-                        {
-                            label: 'REST APIs',
-                            to: 'wiki/api/api.geysermc.org/global-api',
-                        },
-                        {
-                            label: 'Other',
-                            to: 'wiki/other/geyserintegratedpack',
-                        },
+                        { label: 'EduGeyser setup', to: 'wiki/geyser/setup' },
+                        { label: 'Education connection methods', to: 'wiki/geyser/education/connection-methods' },
+                        { label: 'EduFloodgate setup', to: 'wiki/floodgate/setup' },
                     ],
                 },
                 {
                     title: 'Downloads',
                     items: [
-                        {
-                            label: 'EduGeyser',
-                            href: 'https://github.com/EduGeyser/EduGeyser/releases',
-                        },
-                        {
-                            label: 'EduFloodgate',
-                            href: 'https://github.com/EduGeyser/EduFloodgate/releases',
-                        }
+                        { label: 'GitHub releases', href: 'https://github.com/EduGeyser/EduGeyser/releases' },
+                        { label: 'Codeberg mirror', href: 'https://codeberg.org/SendableMetatype/EduGeyser/releases' },
+                        { label: 'EduFloodgate', href: 'https://github.com/EduGeyser/EduFloodgate/releases' },
                     ],
                 },
                 {
                     title: 'Community',
                     items: [
-                        {
-                            label: 'Crowdin',
-                            href: 'https://translate.geysermc.org/',
-                        },
-                        {
-                            label: 'Discord',
-                            href: 'https://discord.gg/WUHDqBxwdD',
-                        },
-                        {
-                            label: 'GitHub',
-                            href: 'https://github.com/EduGeyser',
-                        },
-                        {
-                            label: 'Reddit',
-                            href: 'https://www.reddit.com/r/GeyserMC/',
-                        },
-                        {
-                            label: 'Twitter',
-                            href: 'https://twitter.com/Geyser_MC',
-                        },
+                        { label: 'Discord', href: 'https://edugeyser.org/discord' },
+                        { label: 'GitHub source', href: 'https://github.com/EduGeyser/EduGeyser' },
+                        { label: 'Codeberg mirror', href: 'https://codeberg.org/SendableMetatype/EduGeyser' },
                     ],
                 },
                 {
                     title: 'More',
                     items: [
-                        {
-                            label: 'Blog',
-                            to: 'blog',
-                        },
-                        {
-                            label: 'Donate',
-                            href: 'https://opencollective.com/geysermc',
-                        },
-                        {
-                            label: 'Global Linking',
-                            href: 'https://link.geysermc.org/',
-                        },
+                        { label: 'Blog', to: 'blog' },
+                        { label: 'Website source', href: 'https://github.com/THEMPGUYActions/EduGeyserWebsite' },
                     ],
                 },
-            ]
+            ],
         },
         prism: {
             theme: prismThemes.github,
             darkTheme: prismThemes.dracula,
             additionalLanguages: [
-                'bash', 'batch', 'java', 'json', // Docs
-                'php', 'powershell', 'csharp', 'ruby' // API examples
+                'bash', 'batch', 'java', 'json',
+                'php', 'powershell', 'csharp', 'ruby',
             ],
         },
         colorMode: {
@@ -266,17 +181,10 @@ const config: Config = {
         docs: {
             sidebar: {
                 hideable: true,
-            }
-        },
-        algolia: {
-            appId: '0DTHI9QFCH',
-            apiKey: '3cc0567f76d2ed3ffdb4cc94f0ac9815',
-            indexName: 'geysermc',
-            contextualSearch: true,
-            searchPagePath: 'search',
+            },
         },
         metadata: [
-            { name: 'theme-color', content: '#25c2a0' },
+            { name: 'theme-color', content: '#6d5ae6' },
         ],
     } satisfies Preset.ThemeConfig,
 };

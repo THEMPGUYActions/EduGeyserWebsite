@@ -1,42 +1,37 @@
-# Website
+# EduGeyser website
 
-This is the Geyser website is built using [Docusaurus 3](https://docusaurus.io/).
+This repository contains the public website and wiki for [EduGeyser](https://github.com/EduGeyser/EduGeyser), a Geyser fork that lets Minecraft: Education Edition players connect to Minecraft: Java Edition servers.
 
-## Contributing
+The production site is [edugeyser.org](https://edugeyser.org). It is built with Docusaurus 3 and deployed to GitHub Pages through GitHub Actions.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
+## Project repositories
 
-## Project Structure
+- Main source and commit history: [EduGeyser/EduGeyser](https://github.com/EduGeyser/EduGeyser)
+- Codeberg fallback mirror: [SendableMetatype/EduGeyser](https://codeberg.org/SendableMetatype/EduGeyser)
+- Related authentication project: [EduFloodgate](https://github.com/EduGeyser/EduFloodgate)
+- This website and its wiki source: [THEMPGUYActions/EduGeyserWebsite](https://github.com/THEMPGUYActions/EduGeyserWebsite)
 
-- [`blog/`](/blog/): Blog markdown files
-- [`wiki/`](/wiki/): Wiki markdown files
-    - [`api/`](/wiki/api/): Rest API documentation
-    - [`floodgate/`](/wiki/floodgate/): Floodgate documentation
-    - [`geyser/`](/wiki/geyser): Geyser documentation
-    - [`other/`](/wiki/other/): Other projects documentation
-- [`i18n/`](/i18n/): Translations for the website
-- [`openapi/`](/openapi/): OpenAPI spec files to auto-generate REST API documentation
-- [`src/`](/src/): Source of the website
-    - [`components/`](/src/components/): React components
-    - [`css/`](/src/css/): Styles
-    - [`data/`](/src/data/): Data files, such as hosting providers and supported Minecraft versions
-    - [`pages/`](/src/pages/): Pages of the website
-    - [`renderer/`](/src/renderer/): Renderer for thumbnails
-    - [`theme/`](/src/theme/): Overrides base Docusaurus theme, such as importing fa icons
-    - [`types/`](/src/types/): TypeScript types
-- [`static/`](/static/): Static content
-    - [`img/`](/static/img/): Images
-- [`docusaurus.config.ts`](/docusaurus.config.ts): Docusaurus configuration file
-- [`package.json`](/package.json): Node.js project file
-- [`sidebar.ts`](/sidebar.ts): Site sidebar configuration
-- [`tsconfig.json`](/tsconfig.json): TypeScript configuration file
-- [`yarn.lock`](/yarn.lock): Yarn lock file for Node.js dependencies
+The website reads EduGeyser releases and recent commits from GitHub first. If GitHub's API is unavailable, it falls back to the EduGeyser Codeberg mirror. Wiki pages are authored in this repository, so the edit links point here rather than to a code repository that does not contain those pages.
 
-## Quick Start
+## Development
+
+Requirements: Node.js 22 or later and Yarn 4.
 
 ```sh
-git clone https://github.com/GeyserMC/GeyserWebsite
-cd GeyserWebsite
-yarn
+git clone https://github.com/THEMPGUYActions/EduGeyserWebsite.git
+cd EduGeyserWebsite
+corepack enable
+yarn install
 yarn start
 ```
+
+Build and type-check the site:
+
+```sh
+yarn build
+yarn typecheck
+```
+
+## Attribution
+
+EduGeyser is based on Geyser. Upstream attribution is retained where relevant, while project downloads, commit history, documentation navigation, and support links use EduGeyser destinations.

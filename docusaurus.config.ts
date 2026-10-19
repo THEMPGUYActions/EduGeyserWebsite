@@ -211,7 +211,7 @@ const config: Config = {
                     items: [
                         {
                             label: 'Discord',
-                            href: 'https://edugeyser.org/discord',
+                            href: 'https://discord.gg/WUHDqBxwdD',
                         },
                         {
                             label: 'GitHub source',

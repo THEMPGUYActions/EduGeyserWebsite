@@ -10,8 +10,19 @@ export const noP = (props: { children: any; }) => {
     return children;
 }
 
+function rewriteEduGeyserLinks(markdown: string): string {
+    return markdown
+        .replace(/https?:\/\/github\.com\/GeyserMC\/Geyser(?=[\/#?]|$)/gi, 'https://github.com/EduGeyser/EduGeyser')
+        .replace(/https?:\/\/github\.com\/GeyserMC\/Floodgate(?=[\/#?]|$)/gi, 'https://github.com/EduGeyser/EduFloodgate')
+        .replace(/https?:\/\/wiki\.geysermc\.org\/geyser(?=[\/#?]|$)/gi, 'https://edugeyser.org/wiki/geyser')
+        .replace(/https?:\/\/wiki\.geysermc\.org\/floodgate(?=[\/#?]|$)/gi, 'https://edugeyser.org/wiki/floodgate')
+        .replace(/https?:\/\/geysermc\.org\/wiki\/geyser(?=[\/#?]|$)/gi, 'https://edugeyser.org/wiki/geyser')
+        .replace(/https?:\/\/geysermc\.org\/wiki\/floodgate(?=[\/#?]|$)/gi, 'https://edugeyser.org/wiki/floodgate')
+        .replace(/https?:\/\/geysermc\.org\/download(?=[\/#?]|$)/gi, 'https://edugeyser.org/download');
+}
+
 export const Provider = ({ type }) => {
-    const hostingProviders: HostingProvider[] = providersData[type as ProviderType]
+    const hostingProviders: HostingProvider[] = providersData[type as ProviderType];
 
     return (
         <table>
@@ -23,13 +34,16 @@ export const Provider = ({ type }) => {
             </thead>
             <tbody>
                 {hostingProviders.map((provider: HostingProvider) => (
-                    <tr>
+                    <tr key={provider.name}>
                         <td>
                             <a href={provider.url}>{provider.name}</a>
                         </td>
                         <td>
                             {provider.description != null ? (
-                                <ReactMarkdown children={provider.description} components={{ p: noP }} />
+                                <ReactMarkdown
+                                    children={rewriteEduGeyserLinks(provider.description)}
+                                    components={{ p: noP }}
+                                />
                             ) : (
                                 ''
                             )}
@@ -38,8 +52,8 @@ export const Provider = ({ type }) => {
                 ))}
             </tbody>
         </table>
-    )
-}
+    );
+};
 
 export const ProviderSelector = () => {
     const providers: HostingProvider[] = [
@@ -56,18 +70,17 @@ export const ProviderSelector = () => {
         })
     } as HostingProvider);
 
+    const [selectedProvider, setSelectedProvider] = useState<HostingProvider | null>(null);
 
-    const [selectedProvider, setSelectedProvider] = useState(null);
-
-    const handleSelectionChange = (event) => {
+    const handleSelectionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedName = event.target.value;
         const provider = providers.find(p => p.name === selectedName);
-        setSelectedProvider(provider);
-    }
+        setSelectedProvider(provider ?? null);
+    };
 
     return (
         <div className="host-select">
-            <select onChange={handleSelectionChange}>
+            <select onChange={handleSelectionChange} defaultValue="none">
                 <option value="none">Select a provider</option>
                 {providers.map((provider) => (
                     <option key={provider.name} value={provider.name}>
@@ -77,7 +90,7 @@ export const ProviderSelector = () => {
             </select>
             <Admonition type="tip" title={<Translate id='components.provider.instructions'>Provider Instructions</Translate>}>
                 {selectedProvider ? (
-                    <ReactMarkdown>{selectedProvider.description}</ReactMarkdown>
+                    <ReactMarkdown>{rewriteEduGeyserLinks(selectedProvider.description ?? '')}</ReactMarkdown>
                 ) : (
                     <p>
                         <Translate id='components.provider.select'>Select a provider to see specific installation instructions</Translate>
@@ -86,4 +99,4 @@ export const ProviderSelector = () => {
             </Admonition>
         </div>
     );
-}
+};

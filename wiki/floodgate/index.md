@@ -1,15 +1,18 @@
 ---
-title: Overview
+title: EduFloodgate overview
 permalink: /floodgate/
-description: 'Floodgate is a hybrid mode plugin that allows Minecraft: Bedrock Accounts to join Minecraft: Java Edition servers without needing a Minecraft: Java Edition account.'
+description: 'EduFloodgate lets Bedrock accounts join Minecraft: Java Edition servers without needing a Java Edition account.'
 ---
 
-# Overview
-Floodgate is a hybrid mode server-plugin. It introduces new features:
-- Ability for clients to join Minecraft: Java Edition servers with Minecraft: Bedrock accounts without needing a paid Minecraft: Java Edition account. 
-- Ability to [see Bedrock player skins on Java edition](/wiki/floodgate/features#what-is-skin-uploading).
-- Ability for plugins to [send Bedrock forms](/wiki/geyser/forms/).
-- Ability to query players through the [Global Api](/wiki/api/api.geysermc.org/global-api/), 
-- Allowing Bedrock players to link to a Java account using [Global Linking](/wiki/floodgate/linking#what-is-global-linking), or Local Linking.
+# EduFloodgate overview
 
-This is something you install in addition to Geyser. Unlike Geyser, Floodgate can only be installed as a plugin on Spigot (including Paper and forks), Bungeecord, Velocity, and as a mod on Fabric servers, and can only be utilized on servers that have it installed.
+EduFloodgate is the hybrid-mode companion project for EduGeyser. It introduces these features:
+
+- Bedrock accounts can join supported Java Edition servers without needing a paid Java Edition account.
+- Java players can see supported Bedrock player skins through the [skin-uploading feature](/wiki/floodgate/features#what-is-skin-uploading).
+- Plugins can use the [Bedrock forms supported by EduGeyser](/wiki/geyser/forms/).
+- Bedrock players can link to a Java account using the supported local-linking methods.
+
+Install EduFloodgate alongside EduGeyser when your server needs Bedrock account authentication on an online-mode server. EduFloodgate is installed as a server plugin or supported mod, while EduGeyser provides the client-to-server bridge.
+
+Sources: [EduFloodgate on GitHub](https://github.com/EduGeyser/EduFloodgate) · [EduGeyser on GitHub](https://github.com/EduGeyser/EduGeyser) · [Codeberg mirror](https://codeberg.org/SendableMetatype/EduGeyser)

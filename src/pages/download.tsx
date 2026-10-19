@@ -2,7 +2,6 @@ import React from 'react';
 import HeroBanner from '@site/src/components/HeroBanner';
 import HeroBackground from '@site/static/img/site/split-background.webp';
 import Layout from '@theme/Layout';
-import Translate from '@docusaurus/Translate';
 import { ProjectDownload } from '@site/src/components/ProjectDownload';
 
 export default function Download(): JSX.Element {
@@ -12,8 +11,8 @@ export default function Download(): JSX.Element {
             description="Download EduGeyser releases from GitHub, with Codeberg as a fallback."
         >
             <HeroBanner
-                title={<Translate id="pages.download.title">Download EduGeyser</Translate>}
-                subheading={<Translate id="pages.download.subheading">Get the latest EduGeyser builds and browse the project's commit history.</Translate>}
+                title="Download EduGeyser"
+                subheading="Get the latest EduGeyser builds and browse the project's commit history."
                 backgroundImage={HeroBackground}
             />
             <main>

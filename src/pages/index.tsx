@@ -6,7 +6,6 @@ import Crossplatform2Img from '@site/static/img/site/crossplatform_2.png';
 import Heading from '@theme/Heading';
 import HeroImage from '@site/static/img/site/geyser.png';
 import styles from './index.module.scss';
-import Translate from '@docusaurus/Translate';
 import { HomepageFeature } from '../components/HomepageFeature';
 
 function HomepageHeader() {
@@ -17,10 +16,10 @@ function HomepageHeader() {
                 <img src={HeroImage} alt="" className={styles.heroImageBackgroundBlur} />
                 <div className={styles.textSection}>
                     <Heading as="h1" className="hero__title">
-                        <Translate id="pages.main.title">Connect Education Edition to Java Servers</Translate>
+                        Connect Education Edition to Java Servers
                     </Heading>
                     <p className="hero__subtitle">
-                        <Translate id="pages.main.subtitle">Let Minecraft Education Edition players join your Java server with EduGeyser.</Translate>
+                        Let Minecraft Education Edition players join your Java server with EduGeyser.
                     </p>
                 </div>
             </div>
